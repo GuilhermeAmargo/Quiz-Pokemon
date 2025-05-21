@@ -72,8 +72,13 @@ export default function Index() {
 
   // Verifica se as fontes
   if (!fontsLoaded || loading) {
-    return <View />;
+    return (
+      <View style={styles.loadingContainer}>
+        <Text style={styles.loadingText}>Carregando...</Text>
+      </View>
+    );
   }
+
 
   return (
     <View style={styles.container}>
@@ -135,6 +140,17 @@ const styles = StyleSheet.create({
   optionText: {
     color: "#1a1a1a",
     fontSize: 18,
+    fontFamily: "PokemonGame",
+  },
+  loadingContainer: {
+  flex: 1,
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: "#1a1a1a",
+  },
+  loadingText: {
+    color: "#FFCB05",
+    fontSize: 22,
     fontFamily: "PokemonGame",
   },
 });
